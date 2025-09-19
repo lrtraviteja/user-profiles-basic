@@ -7,7 +7,7 @@ A React application that displays user profiles fetched from a public API. Each 
 
 - Fetches and displays 10 user profiles from [JSONPlaceholder](https://jsonplaceholder.typicode.com/users)
 - Unique avatars generated via [DiceBear Avatars](https://api.dicebear.com/9.x/avataaars/)
-- Loading indicator using `react-loader-spinner`
+- Loading indicator using `spinkit` (plane spinner while fetching data)
 - Custom CSS for all components (no Bootstrap)
 - Component-based folder structure
 - State management with React Context
@@ -28,14 +28,13 @@ src/
 	App.js
 	index.js
 	index.css
-	...
-public/
-	index.html
-	favicon.ico
-	...
 ```
 
 ## Getting Started
+
+### Live Demo
+
+Check out the live demo deployed on Vercel: [DEMO](https://user-profiles-basic-roan.vercel.app/)
 
 ### Install dependencies
 
@@ -49,7 +48,7 @@ npm install
 npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open `http://localhost:3000` to view it in your browser.
 
 ### Build for production
 
@@ -60,7 +59,7 @@ npm run build
 ## Main Dependencies
 
 - React 19
-- react-loader-spinner
+- spinkit
 - [JSONPlaceholder API](https://jsonplaceholder.typicode.com/users)
 - [DiceBear Avatars](https://avatars.dicebear.com/)
 

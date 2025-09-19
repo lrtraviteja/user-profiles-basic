@@ -1,0 +1,12 @@
+.user-list-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+@media (max-width: 576px) {
+  .user-list-container {
+    width: 90%;
+    padding: 8px;
+  }
+}

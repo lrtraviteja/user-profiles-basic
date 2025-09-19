@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import UserList from './components/UserList/UserList';
+import { UserProvider, useUsers } from './context/UserContext';
 import './App.css';
+import { BallTriangle } from 'react-loader-spinner';
 
-function App() {
+function AppContent() {
+  const { loading } = useUsers();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <h1>User Profiles</h1>
+      {loading ? (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
+          <BallTriangle
+            height={80}
+            width={80}
+            radius={5}
+            color="#2a1c60ff"
+            ariaLabel="ball-triangle-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
+      ) : (
+        <UserList />
+      )}
     </div>
   );
 }
+
+const App = () =>  (
+    <UserProvider>
+      <AppContent />
+    </UserProvider>
+  );
 
 export default App;
